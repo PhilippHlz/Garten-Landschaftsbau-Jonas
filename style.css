@@ -20,6 +20,10 @@ body {
     overflow-x: hidden;
 }
 
+.text-primary {
+    color: var(--lime) !important;
+}
+
 /* Navbar */
 .navbar {
     background-color: var(--dark);
@@ -49,7 +53,7 @@ header {
 
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5.5rem, 8vw, 8rem);
+    font-size: clamp(4.5rem, 8vw, 8rem);
     line-height: .9;
     color: var(--white);
 }
@@ -178,4 +182,116 @@ header {
 .service-meta {
     color: var(--green) !important;
     line-height: 1.6;
+}
+
+/* Projects */
+.projects-section {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.project-intro {
+    color: var(--text-d);
+}
+
+.project-carousel {
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+.project-carousel .carousel-inner,
+.project-carousel .carousel-item {
+    border-radius: 1.5rem;
+}
+
+.project-slide-image {
+    display: block;
+    height: clamp(22rem, 58vw, 40rem);
+    object-fit: cover;
+}
+
+.project-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14, 26, 14, 0.08) 0%, rgba(14, 26, 14, 0.72) 100%);
+}
+
+.project-caption {
+    right: auto;
+    left: 0;
+    bottom: 0;
+    width: min(34rem, 100%);
+    padding: 2rem;
+    text-align: left;
+}
+
+.project-label {
+    color: var(--lime);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.project-title {
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: 0.02em;
+}
+
+.project-caption p:last-child {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.project-carousel .carousel-indicators {
+    margin-bottom: 1.25rem;
+}
+
+.project-carousel .carousel-indicators button {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex: 0 0 0.75rem;
+    padding: 0;
+    margin: 0 0.35rem;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-clip: border-box;
+    opacity: 1;
+}
+
+.project-carousel .carousel-indicators .active {
+    background-color: var(--lime);
+}
+
+.project-carousel .carousel-control-prev,
+.project-carousel .carousel-control-next {
+    width: 4rem;
+}
+
+.project-carousel .carousel-control-prev-icon,
+.project-carousel .carousel-control-next-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background-color: rgba(14, 26, 14, 0.42);
+    background-size: 50%;
+}
+
+@media (max-width: 767.98px) {
+    .project-slide-image {
+        height: 24rem;
+    }
+
+    .project-caption {
+        width: 100%;
+        padding: 1.5rem 1.5rem 3.5rem;
+    }
+
+    .project-carousel .carousel-control-prev,
+    .project-carousel .carousel-control-next {
+        display: none;
+    }
 }
