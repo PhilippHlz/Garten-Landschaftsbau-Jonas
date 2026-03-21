@@ -56,6 +56,19 @@ body {
     overflow-x: hidden;
 }
 
+.js .reveal-on-scroll {
+    opacity: 0;
+    transform: translate3d(0, 2.25rem, 0);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+}
+
+.js .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
 .navbar {
     --bs-navbar-color: var(--muted);
     --bs-navbar-hover-color: var(--white);
@@ -308,6 +321,18 @@ small {
     background-color: var(--lime);
     color: var(--dark) !important;
     transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 @media (min-width: 700px) and (max-width: 999.98px) {
